@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+	ViewData["Title"] = "Index";
+	ViewData["Message"] = "Welcome to your new application.";
+	Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/LoginStiles.css"/>
+
+<body>
+    <div class="containerA">
+        <h1 class="title-page">Inicio de session</h1>
+        <form action="/" method="post">
+            <input class="textInput"
+                   type="text"
+                   name="Email"
+                   value=""
+                   placeholder="Correo " />
+            <input class="textInput"
+                   type="password"
+                   name="PasswordHash"
+                   value=""
+                   placeholder="Contraseña" />
+            <div class="containerButton">
+                <button class="button LoginBtn" type="submit">Iniciar sesion</button>
+                <button class="button RegisterBtn" type="button">Registrarse</button>
+            </div>
+        </form>
+    </div>
+</body>

@@ -1,0 +1,82 @@
+/*Esto es una variable de css */
+:root {
+--Background-color-page: rgb(219, 225, 228);
+--Text-Color: #327bfa;
+--highlighter-Color: #ab202a;
+}
+
+* {
+padding: 0;
+margin: 0;
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+/*Ejemplo del uso de las variables en css */
+background-color: var(--Background-color-page);
+background-image: url("https://i.pinimg.com/736x/9b/c0/d1/9bc0d151ea09c0633e4be1fd450b7399.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 90vh;
+}
+
+.title-page {
+color: var(--Text-Color);
+font-size: 30px;
+text-align: left;
+}
+
+.containerA {
+background-color: #0000008a;
+display: flex;
+flex-direction: column;
+justify-items: center;
+border: 1px solid transparent;
+box-shadow: 5px 5px 10px #a8a8a8;
+border-radius: 10px;
+margin: 0 auto;
+padding: 20px;
+width: 50%;
+height: min-content;
+}
+
+.textInput {
+width: 90%;
+padding: 10px;
+margin: 5px;
+border-radius: 10px;
+}
+
+.textInput:focus {
+outline: none;
+box-shadow: none;
+}
+
+.containerButton {
+display: flex;
+justify-content: start;
+align-items: center;
+gap: 10px;
+margin: 5px;
+}
+
+.button {
+padding: 10px;
+border: 1px solid transparent;
+border-radius: 10px;
+cursor: pointer;
+width: 100px;
+}
+
+.LoginBtn {
+background-color: var(--Text-Color);
+color: white;
+}
+
+.RegisterBtn {
+background-color: var(--highlighter-Color);
+color: white;
+}
