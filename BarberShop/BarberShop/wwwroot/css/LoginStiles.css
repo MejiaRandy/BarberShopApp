@@ -2,7 +2,11 @@
 :root {
 --Background-color-page: rgb(219, 225, 228);
 --Text-Color: #327bfa;
+--Text-Color-Lite: #5493ff;
 --highlighter-Color: #ab202a;
+--highlighter-Color-Lite: #a12d35;
+--Background-image-url: url("https://i.pinimg.com/736x/9b/c0/d1/9bc0d151ea09c0633e4be1fd450b7399.jpg");
+
 }
 
 * {
@@ -14,7 +18,7 @@ font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 body {
 /*Ejemplo del uso de las variables en css */
 background-color: var(--Background-color-page);
-background-image: url("https://i.pinimg.com/736x/9b/c0/d1/9bc0d151ea09c0633e4be1fd450b7399.jpg");
+background-image: var(--Background-image-url);
 background-size: cover;
 background-repeat: no-repeat;
 display: flex;
@@ -69,14 +73,27 @@ border: 1px solid transparent;
 border-radius: 10px;
 cursor: pointer;
 width: 100px;
+transition: all 0.3s ease-in-out;
 }
-
+.button:hover {
+transform: translateY(-5px);
+transition: all 0.3s ease-in-out;
+box-shadow: 0px 0px 10px black;
+}
 .LoginBtn {
 background-color: var(--Text-Color);
 color: white;
 }
 
+.LoginBtn:hover {
+background-color: var(--Text-Color-Lite);
+}
+
 .RegisterBtn {
 background-color: var(--highlighter-Color);
 color: white;
+}
+
+.RegisterBtn:hover {
+background-color: var(--highlighter-Color-Lite);
 }
