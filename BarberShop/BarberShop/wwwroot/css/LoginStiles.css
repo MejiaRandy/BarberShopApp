@@ -26,6 +26,10 @@ justify-content: center;
 align-items: center;
 height: 90vh;
 }
+span {
+text-align: center;
+color: var(--Text-Color);
+}
 
 .title-page {
 color: var(--Text-Color);
@@ -86,7 +90,7 @@ padding: 10px;
 border: 1px solid transparent;
 border-radius: 10px;
 cursor: pointer;
-width: 100px;
+width: max-content;
 transition: all 0.3s ease-in-out;
 }
 .button:hover {
@@ -105,8 +109,19 @@ background-color: var(--Text-Color-Lite);
 
 .RegisterBtn {
 background-color: var(--highlighter-Color);
+text-decoration: none;
 color: white;
 }
+
+
+a, a:link, a:visited {
+text-decoration: none;
+}
+
+a:hover, a:active {
+text-decoration: none;
+}
+
 
 .RegisterBtn:hover {
 background-color: var(--highlighter-Color-Lite);

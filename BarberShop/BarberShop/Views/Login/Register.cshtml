@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model BarberShop.ViewModels.UserLogin.RegisterUserViewModels
+
+@{
+	ViewData["Title"] = "Registro";
+	ViewData["Message"] = "Welcome to your new application.";
+	Layout = "_LayoutLogin";
+}
+
+<div class="containerA">
+    <h1 class="title-page">Registro de Usuario</h1>
+
+    
+    <partial name="_ValidationScriptsPartial" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <form method="post" asp-controller="Login" asp-action="Register">
+        <input asp-for="FirstName" class="textInput" placeholder="Nombre" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+
+        <input asp-for="LastName" class="textInput" placeholder="Apellido" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+
+        <input asp-for="Email" type="email" class="textInput" placeholder="Correo electrónico" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+
+        <input asp-for="PhoneNumber" class="textInput" placeholder="Número de teléfono" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+        <input asp-for="UserName" class="textInput" placeholder="Nombre de usuario" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+
+        <input asp-for="Password" type="password" class="textInput" placeholder="Contraseña" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+
+        <input asp-for="ConfirmPassword" type="password" class="textInput" placeholder="Confirmar contraseña" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+        <select asp-for="Role" class="textInput" asp-items="Html.GetEnumSelectList<BarberShop.Enums.UserRoles>()">
+            <option value="">-- Seleccione un rol --</option>
+        </select>
+        
+        <span asp-validation-for="Role" class="text-danger"></span>
+
+        <div class="containerButton">
+            <button type="submit" class="button LoginBtn">Crear cuenta</button>
+            <a asp-controller="Login" asp-action="Index" class="button RegisterBtn">Volver al login</a>
+        </div>
+    </form>
+</div>
+

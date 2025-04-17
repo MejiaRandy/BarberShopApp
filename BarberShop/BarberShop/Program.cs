@@ -5,8 +5,14 @@ using BarberShop.Models.Identity;
 using BarberShop.Seeds;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Stripe;
+using Umbraco.Core.Services;
+using Umbraco.Core.Services.Implement;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+
 
 // Configuro la cadena de conexion
 builder.Services.AddDbContext<IdentityDbContext>(options =>
@@ -16,6 +22,13 @@ builder.Services.AddDbContext<IdentityDbContext>(options =>
 builder.Services.AddIdentity<AppUser, IdentityRole>()
         .AddEntityFrameworkStores<IdentityDbContext>()
         .AddDefaultTokenProviders();
+
+//Redirige al loging si no estan autenticados
+builder.Services.ConfigureApplicationCookie(options => {
+        options.LoginPath = "/Login/Index";
+});
+
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
