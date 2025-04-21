@@ -40,11 +40,11 @@
         <input asp-for="ConfirmPassword" type="password" class="textInput" placeholder="Confirmar contraseña" />
         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
 
-        <select asp-for="Role" class="textInput" asp-items="Html.GetEnumSelectList<BarberShop.Enums.UserRoles>()">
-            <option value="">-- Seleccione un rol --</option>
-        </select>
+        @* <select asp-for="Role" class="textInput" asp-items="Html.GetEnumSelectList<BarberShop.Enums.UserRoles>()"> *@
+        @*     <option value="">-- Seleccione un rol --</option> *@
+        @* </select> *@
         
-        <span asp-validation-for="Role" class="text-danger"></span>
+        @* <span asp-validation-for="Role" class="text-danger"></span> *@
 
         <div class="containerButton">
             <button type="submit" class="button LoginBtn">Crear cuenta</button>

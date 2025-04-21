@@ -98,6 +98,9 @@ namespace BarberShop.Controllers
                 }
                 [HttpPost]
                 public async Task<IActionResult> Register( RegisterUserViewModels vm ) {
+                        
+                        vm.Role = UserRoles.Customer;
+                        
                         if (!ModelState.IsValid)
                                 return View(vm);
 
@@ -113,7 +116,7 @@ namespace BarberShop.Controllers
                                 UserName = vm.UserName!,
                                 Email = vm.Email!,
                                 PhoneNumber = vm.PhoneNumber!,
-                                FirstName = vm.FirstName,
+                                FirstName = vm.FirstName == "" ? "No name" : vm.FirstName,
                                 LastName = vm.LastName
                                 
                         };
